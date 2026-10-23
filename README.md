@@ -3,7 +3,8 @@
 Global Claude Code configuration, shared across all machines and OSes.
 
 - `CLAUDE.md`: global preferences. Loaded through a one-line import in `~/.claude/CLAUDE.md`.
-- `settings.json`: reference copy of `~/.claude/settings.json`. Copied by hand, so each OS can add its own entries.
+
+Settings are not synced; set them by hand on each machine (step 3).
 
 Project-specific preferences live in each project's own `CLAUDE.md` or `.claude/rules/`, not here.
 
@@ -17,7 +18,7 @@ mkdir -p ~/.claude
 echo '@~/Projects/Claude-config/CLAUDE.md' > ~/.claude/CLAUDE.md
 ```
 
-3. Copy `settings.json` (if `~/.claude/settings.json` already exists, merge by hand instead)
+3. Set by hand: allow WebSearch (choose "don't ask again" the first time Claude searches), theme and push notifications (`/config`).
 4. Start `claude` from **anywhere outside this repo** and run `/memory`: this repo's `CLAUDE.md` should be listed.
 
 ## Setup on Windows
@@ -31,7 +32,7 @@ echo '@~/Projects/Claude-config/CLAUDE.md' > ~/.claude/CLAUDE.md
 @~/Projects/Claude-config/CLAUDE.md
 ```
 
-3. Copy `settings.json` (if `C:\Users\orestis\.claude\settings.json` already exists, merge by hand instead)
+3. Set by hand: allow WebSearch (choose "don't ask again" the first time Claude searches), theme and push notifications (`/config`).
 4. Start `claude` from anywhere **outside this repo** and run `/memory`: this repo's `CLAUDE.md` should be listed. If it isn't, replace the import line in `C:\Users\orestis\.claude\CLAUDE.md` with the full path:
 
 ```

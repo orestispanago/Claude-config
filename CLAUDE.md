@@ -17,19 +17,24 @@ Personal coding preferences that apply across all projects, unless a project's o
 - Avoid nested loops where a flatter structure (helper function, early continue, restructured data) is reasonably possible.
 - Do not use the walrus operator (`:=`). Prefer separate assignment and condition statements.
 - Do not use `map`/`filter`/`reduce` or other functional-style built-ins. Prefer explicit `for` loops.
-- Avoid multiple `return` statements in a function; prefer a single `return` at the end where practical.
-- Exception: short check functions (return True/False from one condition or a try/except) return the result directly, e.g. `return a and b`, instead of setting a variable.
+- Return one value from a function; several only if necessary and of the same kind (two dataframes, not a list and a dataframe). Early returns are fine; if a function returns a value anywhere, write `return None` explicitly rather than a bare `return`.
+- Short check functions (return True/False from one condition or a try/except) return the result directly, e.g. `return a and b`, instead of setting a variable.
 - Do not assign the result of a condition/comparison directly on one line (e.g. `x = y == 1`). Keep the comparison and its use separate, or use an explicit `if`/`else` block to set the value.
+- Make only the code changes I list, in the simplest form. No extra refactors, helpers, retries or safeguards; offer extras in the chat instead.
+- Start function names with a verb in most cases (`get_`, `read_`, `parse_`, `check_`).
+- Fail fast: don't write code for errors not yet seen. Let the error happen, then handle it.
 - Give each function a single responsibility where possible. If a function is doing more than one distinct thing, split it into smaller named functions rather than combining unrelated steps.
 - Only add a docstring where it's actually needed. Simple, short, well-named, descriptive functions don't need one. When a docstring is warranted, keep it short: one line is usually enough; two or three lines only if absolutely necessary. Avoid long multi-paragraph docstrings.
 
 ## Git commit messages
 
+- I make the commits myself. Propose a message when asked; don't commit. No `Co-Authored-By` line.
 - One subject line, no body.
-- Past tense verbs: Added, Removed, Moved, Fixed, Renamed, Updated, Refactored.
+- Past tense verbs: Added, Created, Removed, Moved, Fixed, Renamed, Updated, Refactored.
 - Join several changes with commas, lowercase after each comma, e.g. `Added sync button, removed flash message, made charts shorter`.
+- Keep it short: name the main changes only and skip minor follow-ups. Several files under one verb are fine, e.g. `Created read_solar(), added requirements.txt, CLAUDE.md, updated SPEC.md`.
 - No conventional-commit prefixes (`feat:`, `fix:`) and no trailing period. An optional topic prefix is fine, e.g. `Regions-comparison: Added Mann-Whitney test`.
-- Be concrete: name the files, functions or variables involved.
+- Be concrete: name the files, functions or variables involved. Write functions with `()`.
 
 ## Regression reporting
 

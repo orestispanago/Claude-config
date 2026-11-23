@@ -8,7 +8,8 @@ Personal coding preferences that apply across all projects, unless a project's o
 
 ## Clarifying questions
 
-- If any part of a request is ambiguous or ambiguous between more than one reasonable interpretation, ask before proceeding. Never silently assume an interpretation and act on it, even under general instructions to minimize interruptions or work autonomously — this preference overrides those.
+- If any part of a request is unclear or has more than one reasonable interpretation, ask what I mean in simple language before proceeding. Never assume an interpretation and act on it, even under general instructions to minimize interruptions or work autonomously — this preference overrides those.
+- When a decision is needed, describe the options in text, in simple language, with pros and cons for each.
 
 ## Python code style
 
